@@ -258,7 +258,7 @@
         <!--Story-->
         <scene sceneID="MND-Xb-n3e">
             <objects>
-                <viewController id="D7c-e9-I9S" sceneMemberID="viewController">
+                <viewController id="D7c-e9-I9S" customClass="StoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lox-KN-Usf"/>
                         <viewControllerLayoutGuide type="bottom" id="T3p-Mc-Tbm"/>
@@ -279,12 +279,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Aired" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sW9-1D-Pv8">
-                                <rect key="frame" x="16" y="136" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx min xx secs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rE-Du-Dge">
                                 <rect key="frame" x="16" y="165" width="568" height="21"/>
                                 <constraints>
@@ -294,49 +288,68 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXg-Ch-rfp">
-                                <rect key="frame" x="212" y="285" width="57" height="30"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
-                                </accessibility>
-                                <state key="normal" title="Browser">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqo-AJ-oaf">
-                                <rect key="frame" x="363" y="285" width="40" height="30"/>
-                                <state key="normal" title="Audio"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ue8-M0-DgF">
+                                <rect key="frame" x="215" y="258" width="171" height="84"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXg-Ch-rfp">
+                                        <rect key="frame" x="15" y="27" width="57" height="30"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                        </accessibility>
+                                        <state key="normal" title="Browser">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqo-AJ-oaf">
+                                        <rect key="frame" x="111" y="27" width="40" height="30"/>
+                                        <state key="normal" title="Audio"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="NRX-TH-kwA"/>
+                                    <constraint firstAttribute="width" constant="171" id="QtY-Dv-4Zi"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Aired" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sW9-1D-Pv8">
+                                <rect key="frame" x="16" y="136" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sW9-1D-Pv8" firstAttribute="top" secondItem="ha0-Az-FfF" secondAttribute="bottom" constant="8" symbolic="YES" id="51I-Qe-DvC"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="leading" secondItem="ha0-Az-FfF" secondAttribute="leading" id="6I4-Q3-Wjn"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="leading" secondItem="jqU-UT-QHw" secondAttribute="leading" id="7BV-si-PEe"/>
-                            <constraint firstItem="gXg-Ch-rfp" firstAttribute="top" secondItem="6rE-Du-Dge" secondAttribute="bottom" constant="99" id="7dk-sc-4yf"/>
+                            <constraint firstItem="ue8-M0-DgF" firstAttribute="top" secondItem="6rE-Du-Dge" secondAttribute="bottom" constant="72" id="D5N-S8-0qd"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="leading" secondItem="sW9-1D-Pv8" secondAttribute="leading" id="IF3-Rl-2nL"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="trailing" secondItem="sW9-1D-Pv8" secondAttribute="trailing" id="LbD-Nk-75O"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="top" secondItem="sW9-1D-Pv8" secondAttribute="bottom" constant="8" symbolic="YES" id="NTf-0t-3bN"/>
+                            <constraint firstItem="jqU-UT-QHw" firstAttribute="top" secondItem="lox-KN-Usf" secondAttribute="bottom" constant="14" id="Ow7-g5-re6"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="trailing" secondItem="jqU-UT-QHw" secondAttribute="trailing" id="Plt-Hm-bWS"/>
+                            <constraint firstAttribute="centerY" secondItem="ue8-M0-DgF" secondAttribute="centerY" id="PxX-2c-XK6"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="trailing" secondItem="DGg-om-h8W" secondAttribute="trailingMargin" id="Vs2-Dg-gBX"/>
                             <constraint firstItem="ha0-Az-FfF" firstAttribute="top" secondItem="jqU-UT-QHw" secondAttribute="bottom" constant="8" symbolic="YES" id="dhm-ol-4kj"/>
-                            <constraint firstAttribute="centerY" secondItem="gXg-Ch-rfp" secondAttribute="centerY" id="eHh-M7-xyc"/>
-                            <constraint firstItem="Zqo-AJ-oaf" firstAttribute="leading" secondItem="gXg-Ch-rfp" secondAttribute="trailing" constant="94" id="eiz-aT-GgI"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="leading" secondItem="DGg-om-h8W" secondAttribute="leadingMargin" id="gZm-8y-Mhp"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="trailing" secondItem="ha0-Az-FfF" secondAttribute="trailing" id="iil-dF-cRR"/>
-                            <constraint firstItem="gXg-Ch-rfp" firstAttribute="top" secondItem="6rE-Du-Dge" secondAttribute="bottom" constant="39" id="oSH-W2-LEf"/>
-                            <constraint firstAttribute="centerY" secondItem="Zqo-AJ-oaf" secondAttribute="centerY" id="sw4-Ci-x8o"/>
-                            <constraint firstItem="gXg-Ch-rfp" firstAttribute="leading" secondItem="DGg-om-h8W" secondAttribute="leadingMargin" constant="196" id="wZB-uM-SZU"/>
+                            <constraint firstAttribute="centerX" secondItem="ue8-M0-DgF" secondAttribute="centerX" id="xDd-l3-xq4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="oSH-W2-LEf"/>
+                                <exclude reference="D5N-S8-0qd"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Story" id="qJ0-dH-y5Z">
                         <barButtonItem key="backBarButtonItem" title="Stories" id="qM3-7U-78Y"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateAiredView" destination="sW9-1D-Pv8" id="dKM-ZI-3dy"/>
+                        <outlet property="durationView" destination="6rE-Du-Dge" id="z81-xl-Pbn"/>
+                        <outlet property="reporterNameView" destination="ha0-Az-FfF" id="XxX-gj-NeH"/>
+                        <outlet property="titleView" destination="jqU-UT-QHw" id="Tf0-OG-qHr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzG-iR-gV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

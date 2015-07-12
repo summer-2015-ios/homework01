@@ -33,6 +33,7 @@
 		3FD947CE1B52E2790006CF8C /* ProgramsTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947CD1B52E2790006CF8C /* ProgramsTopicsViewController.m */; };
 		3FD947D11B52FC040006CF8C /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D01B52FC040006CF8C /* StoriesViewController.m */; };
 		3FD947D41B52FF7B0006CF8C /* StoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */; };
+		3FD947D71B531A120006CF8C /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D61B531A120006CF8C /* StoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		3FD947D01B52FC040006CF8C /* StoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoriesViewController.m; sourceTree = "<group>"; };
 		3FD947D21B52FF7B0006CF8C /* StoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryTableViewCell.h; sourceTree = "<group>"; };
 		3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTableViewCell.m; sourceTree = "<group>"; };
+		3FD947D51B531A120006CF8C /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
+		3FD947D61B531A120006CF8C /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				3FD9477B1B52D3BA0006CF8C /* ViewController.h */,
 				3FD9477C1B52D3BA0006CF8C /* ViewController.m */,
 				3FD9477E1B52D3BA0006CF8C /* Main.storyboard */,
+				3FD947D51B531A120006CF8C /* StoryViewController.h */,
+				3FD947D61B531A120006CF8C /* StoryViewController.m */,
 				3FD947D21B52FF7B0006CF8C /* StoryTableViewCell.h */,
 				3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */,
 				3FD947CC1B52E2790006CF8C /* ProgramsTopicsViewController.h */,
@@ -325,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD947D71B531A120006CF8C /* StoryViewController.m in Sources */,
 				3FD947C91B52D4580006CF8C /* UIImageView+HighlightedWebCache.m in Sources */,
 				3FD947BD1B52D4580006CF8C /* NSData+ImageContentType.m in Sources */,
 				3FD947C31B52D4580006CF8C /* SDWebImageManager.m in Sources */,

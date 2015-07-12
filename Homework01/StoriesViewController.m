@@ -9,6 +9,7 @@
 #import "StoriesViewController.h"
 #import "StoryTableViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "StoryViewController.h"
 
 @interface StoriesViewController ()  <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray* stories;
@@ -77,14 +78,16 @@
      resume];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    StoryViewController* vc = [segue destinationViewController];
+    UITableViewCell* cell = (UITableViewCell*) sender;
+    long row = [(UITableView*)[self.view viewWithTag:1000] indexPathForCell:cell].row;
+    vc.storyTitle = [self.stories[row] valueForKeyPath:@"title.$text"];
+    vc.reporterName = [self.stories[row] valueForKeyPath:@"title.$text"];
 }
-*/
+
 
 @end
