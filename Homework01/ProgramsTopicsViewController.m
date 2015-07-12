@@ -42,9 +42,7 @@
     if(!cell){
         
     }
-    //UILabel* title = (UILabel*)[cell viewWithTag:1001];
-    //title.text = [self.items[indexPath.row] valueForKeyPath:@"title.$text"];
-     cell.textLabel.text = [self.items[indexPath.row] valueForKeyPath:@"title.$text"];
+    cell.textLabel.text = [self.items[indexPath.row] valueForKeyPath:@"title.$text"];
     return cell;
 }
 -(void) fetchItems{

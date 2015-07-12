@@ -44,6 +44,8 @@
     NSString* url = [[self.stories[indexPath.row] valueForKey:@"image"][0] valueForKey:@"src"];
     [cell.imageView sd_setImageWithURL: [NSURL URLWithString:url ]
                       placeholderImage:[UIImage imageNamed:@"No_Image_Available"]];
+    cell.miniTeaserView.text = [self.stories[indexPath.row] valueForKeyPath:@"miniTeaser.$text"];
+    cell.pubDateView.text = [self.stories[indexPath.row] valueForKeyPath:@"pubDate.$text"];
     return cell;
 }
 
