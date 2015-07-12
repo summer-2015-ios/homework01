@@ -31,6 +31,8 @@
 		3FD947CA1B52D4580006CF8C /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947B91B52D4580006CF8C /* UIImageView+WebCache.m */; };
 		3FD947CB1B52D4580006CF8C /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947BB1B52D4580006CF8C /* UIView+WebCacheOperation.m */; };
 		3FD947CE1B52E2790006CF8C /* ProgramsTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947CD1B52E2790006CF8C /* ProgramsTopicsViewController.m */; };
+		3FD947D11B52FC040006CF8C /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D01B52FC040006CF8C /* StoriesViewController.m */; };
+		3FD947D41B52FF7B0006CF8C /* StoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,10 @@
 		3FD947BB1B52D4580006CF8C /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		3FD947CC1B52E2790006CF8C /* ProgramsTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramsTopicsViewController.h; sourceTree = "<group>"; };
 		3FD947CD1B52E2790006CF8C /* ProgramsTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramsTopicsViewController.m; sourceTree = "<group>"; };
+		3FD947CF1B52FC040006CF8C /* StoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoriesViewController.h; sourceTree = "<group>"; };
+		3FD947D01B52FC040006CF8C /* StoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoriesViewController.m; sourceTree = "<group>"; };
+		3FD947D21B52FF7B0006CF8C /* StoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryTableViewCell.h; sourceTree = "<group>"; };
+		3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +144,12 @@
 				3FD9477B1B52D3BA0006CF8C /* ViewController.h */,
 				3FD9477C1B52D3BA0006CF8C /* ViewController.m */,
 				3FD9477E1B52D3BA0006CF8C /* Main.storyboard */,
+				3FD947D21B52FF7B0006CF8C /* StoryTableViewCell.h */,
+				3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */,
 				3FD947CC1B52E2790006CF8C /* ProgramsTopicsViewController.h */,
 				3FD947CD1B52E2790006CF8C /* ProgramsTopicsViewController.m */,
+				3FD947CF1B52FC040006CF8C /* StoriesViewController.h */,
+				3FD947D01B52FC040006CF8C /* StoriesViewController.m */,
 				3FD947811B52D3BA0006CF8C /* Images.xcassets */,
 				3FD947831B52D3BA0006CF8C /* LaunchScreen.xib */,
 				3FD947741B52D3BA0006CF8C /* Supporting Files */,
@@ -319,12 +329,14 @@
 				3FD947BD1B52D4580006CF8C /* NSData+ImageContentType.m in Sources */,
 				3FD947C31B52D4580006CF8C /* SDWebImageManager.m in Sources */,
 				3FD947C11B52D4580006CF8C /* SDWebImageDownloader.m in Sources */,
+				3FD947D11B52FC040006CF8C /* StoriesViewController.m in Sources */,
 				3FD947C81B52D4580006CF8C /* UIImage+WebP.m in Sources */,
 				3FD947CE1B52E2790006CF8C /* ProgramsTopicsViewController.m in Sources */,
 				3FD947CB1B52D4580006CF8C /* UIView+WebCacheOperation.m in Sources */,
 				3FD947BE1B52D4580006CF8C /* SDImageCache.m in Sources */,
 				3FD9477D1B52D3BA0006CF8C /* ViewController.m in Sources */,
 				3FD947BC1B52D4580006CF8C /* MKAnnotationView+WebCache.m in Sources */,
+				3FD947D41B52FF7B0006CF8C /* StoryTableViewCell.m in Sources */,
 				3FD947C01B52D4580006CF8C /* SDWebImageDecoder.m in Sources */,
 				3FD947C71B52D4580006CF8C /* UIImage+MultiFormat.m in Sources */,
 				3FD947C21B52D4580006CF8C /* SDWebImageDownloaderOperation.m in Sources */,

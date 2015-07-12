@@ -1,36 +1,34 @@
 //
-//  ProgramsTopicsViewController.m
+//  StoriesViewController.m
 //  Homework01
 //
 //  Created by student on 7/12/15.
 //  Copyright (c) 2015 student. All rights reserved.
 //
 
-#import "ProgramsTopicsViewController.h"
-#import "ViewController.h"
 #import "StoriesViewController.h"
+#import "StoryTableViewCell.h"
+#import "UIImageView+WebCache.h"
 
-@interface ProgramsTopicsViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) NSMutableArray* items;
+@interface StoriesViewController ()  <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) NSMutableArray* stories;
 @end
 
-@implementation ProgramsTopicsViewController
+@implementation StoriesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"selction %d", self.type);
-    [self fetchItems];
+    [self fetchStories];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 # pragma mark - UITableViewDataSource implementation
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.items.count;
+    return self.stories.count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -38,22 +36,21 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"programsCell"];
+    StoryTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"storiesCell"];
     if(!cell){
         
     }
-    //UILabel* title = (UILabel*)[cell viewWithTag:1001];
-    //title.text = [self.items[indexPath.row] valueForKeyPath:@"title.$text"];
-     cell.textLabel.text = [self.items[indexPath.row] valueForKeyPath:@"title.$text"];
+    NSLog(@"title %@", [self.stories[indexPath.row] valueForKeyPath:@"title.$text"]);
+    cell.titleView.text = [self.stories[indexPath.row] valueForKeyPath:@"title.$text"];
+    NSString* url = [[self.stories[indexPath.row] valueForKey:@"image"][0] valueForKey:@"src"];
+    [cell.imageView sd_setImageWithURL: [NSURL URLWithString:url ]
+                      placeholderImage:[UIImage imageNamed:@"No_Image_Available"]];
     return cell;
 }
--(void) fetchItems{
-    NSString* url;
-    if( self.type == TOPICS){
-        url = [NSString stringWithFormat:@"%@", @"http://api.npr.org/list?id=3002&output=JSON"];
-    }else if(self.type == PROGRAMS){
-        url = [NSString stringWithFormat:@"%@", @"http://api.npr.org/list?id=3004&output=JSON"];
-    }
+
+# pragma mark - fetch stories
+-(void) fetchStories{
+    NSString* url = [NSString stringWithFormat:@"%@%ld", @"http://api.npr.org/query?fields=all&dateType=story&numResults=25&output=JSON&apiKey=MDE4MzQ4NjIzMDE0MjQ1ODc3MjAwMDg2Zg001&id=", self.itemId];
     NSURLRequest *request  = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request
@@ -69,7 +66,8 @@
                         NSLog(@"Error while parsing json");
                         return;
                     }
-                    self.items = [dict valueForKey:@"item"];
+                    self.stories = [dict valueForKeyPath:@"list.story"];
+                    //NSLog(@"count of stories :%lu, %@", (unsigned long)self.stories.count, self.stories[0]);
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [(UITableView*)[self.view viewWithTag:1000] reloadData];
                     });
@@ -78,14 +76,14 @@
      resume];
 }
 
+/*
 #pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    StoriesViewController* vc = [segue destinationViewController];
-    UITableViewCell* cell = (UITableViewCell*) sender;
-    long row = [(UITableView*)[self.view viewWithTag:1000] indexPathForCell:cell].row;
-    vc.itemId = (long)[self.items[row] valueForKeyPath:@"id"] ;
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
+*/
 
 @end
