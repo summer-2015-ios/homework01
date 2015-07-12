@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ProgramsTopicsViewController.h"
 @interface ViewController ()
 
 @end
@@ -22,6 +22,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    ProgramsTopicsViewController * vc = (ProgramsTopicsViewController*)[segue destinationViewController];
+    if([[segue identifier] isEqualToString:@"topicsSegue" ]){
+        vc.type = TOPICS;
+    }else if ([[segue identifier] isEqualToString:@"programsSegue"]){
+        vc.type = PROGRAMS;
+    }
+
 }
 
 @end

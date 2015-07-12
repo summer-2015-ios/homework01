@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ProgramsTopicsViewController.h
 //  Homework01
 //
 //  Created by student on 7/12/15.
@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-# define TOPICS 0
-# define PROGRAMS 1
-@interface ViewController : UIViewController
-
-
+@interface ProgramsTopicsViewController : UIViewController
+@property (nonatomic) int type;
 @end
-
