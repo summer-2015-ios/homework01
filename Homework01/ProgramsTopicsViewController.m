@@ -84,7 +84,8 @@
     StoriesViewController* vc = [segue destinationViewController];
     UITableViewCell* cell = (UITableViewCell*) sender;
     long row = [(UITableView*)[self.view viewWithTag:1000] indexPathForCell:cell].row;
-    vc.itemId = (long)[self.items[row] valueForKeyPath:@"id"] ;
+    vc.itemId = [(NSString*)[self.items[row] valueForKey:@"id"] integerValue];
+    NSLog(@"Sending id %ld", vc.itemId);
 }
 
 

@@ -40,7 +40,6 @@
     if(!cell){
         
     }
-    NSLog(@"title %@", [self.stories[indexPath.row] valueForKeyPath:@"title.$text"]);
     cell.titleView.text = [self.stories[indexPath.row] valueForKeyPath:@"title.$text"];
     NSString* url = [[self.stories[indexPath.row] valueForKey:@"image"][0] valueForKey:@"src"];
     [cell.imageView sd_setImageWithURL: [NSURL URLWithString:url ]
