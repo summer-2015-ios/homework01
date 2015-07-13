@@ -7,12 +7,14 @@
 //
 
 #import "StoryViewController.h"
+#import "WebViewViewController.h"
 
 @interface StoryViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleView;
 @property (weak, nonatomic) IBOutlet UILabel *reporterNameView;
 @property (weak, nonatomic) IBOutlet UILabel *dateAiredView;
 @property (weak, nonatomic) IBOutlet UILabel *durationView;
+@property (weak, nonatomic) IBOutlet UILabel *teaserView;
 
 @end
 
@@ -23,7 +25,8 @@
     self.titleView.text = self.storyTitle;
     self.reporterNameView.text = self.reporterName;
     self.dateAiredView.text = self.dateAired;
-    self.durationView.text = self.duration;
+    self.durationView.text = [NSString stringWithFormat:@"%ld", self.duration ];
+    self.teaserView.text = self.teaser;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,14 +34,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    WebViewViewController* vc = [segue destinationViewController];
+    vc.url = self.browserLink;
 }
-*/
-
+-(IBAction)backFromWebView:(UIStoryboardSegue* )segue{
+    NSLog(@"Back from web view");
+}
 @end

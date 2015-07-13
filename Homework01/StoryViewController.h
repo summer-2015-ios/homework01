@@ -12,7 +12,8 @@
 @property (nonatomic, strong) NSString* storyTitle;
 @property (nonatomic, strong) NSString* reporterName;
 @property (nonatomic, strong) NSString* dateAired;
-@property (nonatomic, strong) NSString* duration;
+@property (nonatomic) long duration;
 @property (nonatomic, strong) NSString* browserLink;
 @property (nonatomic, strong) NSString* audio;
+@property (nonatomic, strong) NSString* teaser;
 @end

@@ -34,6 +34,7 @@
 		3FD947D11B52FC040006CF8C /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D01B52FC040006CF8C /* StoriesViewController.m */; };
 		3FD947D41B52FF7B0006CF8C /* StoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */; };
 		3FD947D71B531A120006CF8C /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D61B531A120006CF8C /* StoryViewController.m */; };
+		3FD947DA1B5449B40006CF8C /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947D91B5449B40006CF8C /* WebViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTableViewCell.m; sourceTree = "<group>"; };
 		3FD947D51B531A120006CF8C /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
 		3FD947D61B531A120006CF8C /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
+		3FD947D81B5449B40006CF8C /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
+		3FD947D91B5449B40006CF8C /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,14 +150,16 @@
 				3FD9477B1B52D3BA0006CF8C /* ViewController.h */,
 				3FD9477C1B52D3BA0006CF8C /* ViewController.m */,
 				3FD9477E1B52D3BA0006CF8C /* Main.storyboard */,
-				3FD947D51B531A120006CF8C /* StoryViewController.h */,
-				3FD947D61B531A120006CF8C /* StoryViewController.m */,
 				3FD947D21B52FF7B0006CF8C /* StoryTableViewCell.h */,
 				3FD947D31B52FF7B0006CF8C /* StoryTableViewCell.m */,
 				3FD947CC1B52E2790006CF8C /* ProgramsTopicsViewController.h */,
 				3FD947CD1B52E2790006CF8C /* ProgramsTopicsViewController.m */,
 				3FD947CF1B52FC040006CF8C /* StoriesViewController.h */,
 				3FD947D01B52FC040006CF8C /* StoriesViewController.m */,
+				3FD947D51B531A120006CF8C /* StoryViewController.h */,
+				3FD947D61B531A120006CF8C /* StoryViewController.m */,
+				3FD947D81B5449B40006CF8C /* WebViewViewController.h */,
+				3FD947D91B5449B40006CF8C /* WebViewViewController.m */,
 				3FD947811B52D3BA0006CF8C /* Images.xcassets */,
 				3FD947831B52D3BA0006CF8C /* LaunchScreen.xib */,
 				3FD947741B52D3BA0006CF8C /* Supporting Files */,
@@ -348,6 +353,7 @@
 				3FD947C21B52D4580006CF8C /* SDWebImageDownloaderOperation.m in Sources */,
 				3FD9477A1B52D3BA0006CF8C /* AppDelegate.m in Sources */,
 				3FD947C51B52D4580006CF8C /* UIButton+WebCache.m in Sources */,
+				3FD947DA1B5449B40006CF8C /* WebViewViewController.m in Sources */,
 				3FD947C41B52D4580006CF8C /* SDWebImagePrefetcher.m in Sources */,
 				3FD947CA1B52D4580006CF8C /* UIImageView+WebCache.m in Sources */,
 				3FD947BF1B52D4580006CF8C /* SDWebImageCompat.m in Sources */,
@@ -545,6 +551,7 @@
 				3FD947961B52D3BA0006CF8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FD947971B52D3BA0006CF8C /* Build configuration list for PBXNativeTarget "Homework01Tests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +560,7 @@
 				3FD947991B52D3BA0006CF8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -42,10 +42,10 @@
         
     }
     cell.titleView.text = [self.stories[indexPath.row] valueForKeyPath:@"title.$text"];
-    NSString* url = [[self.stories[indexPath.row] valueForKey:@"image"][0] valueForKey:@"src"];
+    NSString* url = [self.stories[indexPath.row] valueForKeyPath:@"thumbnail.medium.$text"];
     [cell.imageView sd_setImageWithURL: [NSURL URLWithString:url ]
                       placeholderImage:[UIImage imageNamed:@"No_Image_Available"]];
-    cell.miniTeaserView.text = [self.stories[indexPath.row] valueForKeyPath:@"miniTeaser.$text"];
+    cell.miniTeaserView.text = [self.stories[indexPath.row] valueForKeyPath:@"teaser.$text"];
     cell.pubDateView.text = [self.stories[indexPath.row] valueForKeyPath:@"pubDate.$text"];
     return cell;
 }
@@ -86,7 +86,41 @@
     UITableViewCell* cell = (UITableViewCell*) sender;
     long row = [(UITableView*)[self.view viewWithTag:1000] indexPathForCell:cell].row;
     vc.storyTitle = [self.stories[row] valueForKeyPath:@"title.$text"];
-    vc.reporterName = [self.stories[row] valueForKeyPath:@"title.$text"];
+    NSArray* reporterArray = [self.stories[row] valueForKeyPath:@"byline"];
+    if([reporterArray count] > 0){
+        vc.reporterName = [reporterArray[0] valueForKeyPath:@"name.$text"];
+    } else{
+        vc.reporterName = @"NA";
+    }
+    // get the link
+    NSArray* links = [self.stories[row] valueForKeyPath:@"link"];
+    if([links count ] > 0){
+        for (NSDictionary* link in links) {
+            if ([[link valueForKeyPath:@"type"] isEqualToString:@"html"]) {
+                vc.browserLink = [link valueForKeyPath:@"$text"];
+            }
+        }
+    } else{
+        vc.browserLink = nil;
+    }
+    // duration and stream
+    NSArray* audios = [self.stories[row] valueForKeyPath:@"audio"];
+    if([audios count] > 0){
+        vc.duration = [(NSString*)[audios[0] valueForKeyPath:@"duration.$text"] integerValue] ;
+        NSArray* mp3s = [audios[0] valueForKeyPath:@"format.mp3"];
+        if([mp3s count] > 0){
+            vc.audio = [mp3s[0] valueForKeyPath:@"$text"];
+        }
+    }else{
+        vc.duration = 0;
+    }
+    //teaser
+    vc.teaser = [self.stories[row] valueForKeyPath:@"teaser.$text"];
+    //aired date
+     NSArray* shows = [self.stories[row] valueForKeyPath:@"show"];
+    if([shows count] > 0){
+        vc.dateAired = [shows[0] valueForKeyPath:@"showDate.$text"];
+    }
 }
 
 
