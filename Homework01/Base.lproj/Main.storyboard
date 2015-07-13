@@ -306,6 +306,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqo-AJ-oaf">
                                         <rect key="frame" x="111" y="27" width="40" height="30"/>
                                         <state key="normal" title="Audio"/>
+                                        <connections>
+                                            <action selector="audioClicked:" destination="D7c-e9-I9S" eventType="touchUpInside" id="uGQ-kB-0wQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -353,9 +356,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Story" id="qJ0-dH-y5Z">
                         <barButtonItem key="backBarButtonItem" title="Stories" id="qM3-7U-78Y"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateAiredView" destination="sW9-1D-Pv8" id="dKM-ZI-3dy"/>
                         <outlet property="durationView" destination="6rE-Du-Dge" id="z81-xl-Pbn"/>
