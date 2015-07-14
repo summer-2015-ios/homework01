@@ -90,11 +90,9 @@
      resume];
 }
 - (IBAction)audioClicked:(UIButton *)sender {
-   // NSLog(@"1url = %@\n 2 url= %@",self.audio, self.audioPlayableUrl);
     self.player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:self.audioPlayableUrl]];
 //    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:([NSURL URLWithString:self.audioPlayableUrl])
 //                                                                   error:&error];
-//
     [self enablePlayerControls];
     [self.player play];
     NSLog(@"Volume %f", self.player.volume);

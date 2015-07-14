@@ -13,6 +13,7 @@
 
 @interface StoriesViewController ()  <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray* stories;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end
 
 @implementation StoriesViewController
@@ -52,6 +53,7 @@
 
 # pragma mark - fetch stories
 -(void) fetchStories{
+    [self.activityIndicator startAnimating];
     NSString* url = [NSString stringWithFormat:@"%@%ld", @"http://api.npr.org/query?fields=all&dateType=story&numResults=25&output=JSON&apiKey=MDE4MzQ4NjIzMDE0MjQ1ODc3MjAwMDg2Zg001&id=", self.itemId];
     NSURLRequest *request  = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
@@ -72,6 +74,7 @@
                     //NSLog(@"count of stories :%lu, %@", (unsigned long)self.stories.count, self.stories[0]);
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [(UITableView*)[self.view viewWithTag:1000] reloadData];
+                        [self.activityIndicator stopAnimating];
                     });
                     
                 }]

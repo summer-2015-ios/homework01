@@ -12,6 +12,7 @@
 
 @interface ProgramsTopicsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray* items;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @end
 
 @implementation ProgramsTopicsViewController
@@ -47,6 +48,7 @@
 }
 -(void) fetchItems{
     NSString* url;
+    [self.activityIndicator startAnimating];
     if( self.type == TOPICS){
         url = [NSString stringWithFormat:@"%@", @"http://api.npr.org/list?id=3002&output=JSON"];
     }else if(self.type == PROGRAMS){
@@ -70,6 +72,7 @@
                     self.items = [dict valueForKey:@"item"];
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [(UITableView*)[self.view viewWithTag:1000] reloadData];
+                        [self.activityIndicator stopAnimating];
                     });
                     
                 }]
