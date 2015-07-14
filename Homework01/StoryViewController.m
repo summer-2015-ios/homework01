@@ -36,7 +36,7 @@
     self.titleView.text = self.storyTitle;
     self.reporterNameView.text = self.reporterName;
     self.dateAiredView.text = self.dateAired;
-    self.durationView.text = [NSString stringWithFormat:@"%ld", self.duration ];
+    self.durationView.text = [self getDurationFormatted];
     self.teaserView.text = self.teaser;
     if (!self.audio) {
         self.audioBtn.enabled = NO;
@@ -44,7 +44,25 @@
         [self fetchMp3Stream];
     }
 }
-
+-(NSString*) getDurationFormatted{
+    int seconds = self.duration % 60;
+    int minutes = (self.duration / 60)%60;
+    return [NSString stringWithFormat:@"%d mins %d secs", minutes, seconds];
+}
+-(NSString*) getDateAired{
+    if(!_dateAired || [_dateAired length] == 0){
+        return @"NA";
+    }else{
+        return _dateAired;
+    }
+}
+-(NSString*) getReporterName{
+    if(_reporterName){
+        return _reporterName;
+    }else {
+        return @"NA";
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

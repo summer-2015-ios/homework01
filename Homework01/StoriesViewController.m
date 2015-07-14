@@ -93,7 +93,7 @@
     if([reporterArray count] > 0){
         vc.reporterName = [reporterArray[0] valueForKeyPath:@"name.$text"];
     } else{
-        vc.reporterName = @"NA";
+        vc.reporterName = nil;
     }
     // get the link
     NSArray* links = [self.stories[row] valueForKeyPath:@"link"];
@@ -123,6 +123,8 @@
      NSArray* shows = [self.stories[row] valueForKeyPath:@"show"];
     if([shows count] > 0){
         vc.dateAired = [shows[0] valueForKeyPath:@"showDate.$text"];
+    }else{
+        vc.dateAired = nil;
     }
 }
 
