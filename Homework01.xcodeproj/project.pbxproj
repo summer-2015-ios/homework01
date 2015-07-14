@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FD454F11B554CCC009A2BD3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD454F01B554CCC009A2BD3 /* AVKit.framework */; };
 		3FD947771B52D3BA0006CF8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947761B52D3BA0006CF8C /* main.m */; };
 		3FD9477A1B52D3BA0006CF8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD947791B52D3BA0006CF8C /* AppDelegate.m */; };
 		3FD9477D1B52D3BA0006CF8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD9477C1B52D3BA0006CF8C /* ViewController.m */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3FD454F01B554CCC009A2BD3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		3FD947711B52D3BA0006CF8C /* Homework01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD947751B52D3BA0006CF8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FD947761B52D3BA0006CF8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD454F11B554CCC009A2BD3 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +130,7 @@
 		3FD947681B52D3BA0006CF8C = {
 			isa = PBXGroup;
 			children = (
+				3FD454F01B554CCC009A2BD3 /* AVKit.framework */,
 				3FD947731B52D3BA0006CF8C /* Homework01 */,
 				3FD9478D1B52D3BA0006CF8C /* Homework01Tests */,
 				3FD947721B52D3BA0006CF8C /* Products */,

@@ -307,7 +307,7 @@
                                         <rect key="frame" x="111" y="27" width="40" height="30"/>
                                         <state key="normal" title="Audio"/>
                                         <connections>
-                                            <action selector="audioClicked:" destination="D7c-e9-I9S" eventType="touchUpInside" id="uGQ-kB-0wQ"/>
+                                            <action selector="audioClicked:" destination="D7c-e9-I9S" eventType="touchUpInside" id="cx9-5z-L2R"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -328,6 +328,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h94-5q-79R">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="Ihe-WD-vcU">
+                                        <connections>
+                                            <action selector="rewind:" destination="D7c-e9-I9S" id="mzV-34-V4H"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="play" id="VkS-iw-a7z">
+                                        <connections>
+                                            <action selector="play:" destination="D7c-e9-I9S" id="Ihy-it-wZA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="pause" id="SNG-TN-tXW">
+                                        <connections>
+                                            <action selector="pause:" destination="D7c-e9-I9S" id="5UI-l1-f53"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="IO7-ep-brb">
+                                        <connections>
+                                            <action selector="forward:" destination="D7c-e9-I9S" id="AGg-K4-DaH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -335,7 +360,9 @@
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="leading" secondItem="ha0-Az-FfF" secondAttribute="leading" id="6I4-Q3-Wjn"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="leading" secondItem="jqU-UT-QHw" secondAttribute="leading" id="7BV-si-PEe"/>
                             <constraint firstItem="ue8-M0-DgF" firstAttribute="top" secondItem="6rE-Du-Dge" secondAttribute="bottom" constant="72" id="D5N-S8-0qd"/>
+                            <constraint firstItem="h94-5q-79R" firstAttribute="bottom" secondItem="DGg-om-h8W" secondAttribute="bottomMargin" id="Hxo-Sr-DfO"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="leading" secondItem="sW9-1D-Pv8" secondAttribute="leading" id="IF3-Rl-2nL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h94-5q-79R" secondAttribute="trailing" constant="-16" id="K0U-gD-nYT"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="trailing" secondItem="sW9-1D-Pv8" secondAttribute="trailing" id="LbD-Nk-75O"/>
                             <constraint firstItem="6rE-Du-Dge" firstAttribute="top" secondItem="sW9-1D-Pv8" secondAttribute="bottom" constant="8" symbolic="YES" id="NTf-0t-3bN"/>
                             <constraint firstItem="jqU-UT-QHw" firstAttribute="top" secondItem="lox-KN-Usf" secondAttribute="bottom" constant="14" id="Ow7-g5-re6"/>
@@ -349,6 +376,7 @@
                             <constraint firstItem="noK-7j-oZd" firstAttribute="top" secondItem="6rE-Du-Dge" secondAttribute="bottom" constant="8" id="obx-ud-xCk"/>
                             <constraint firstItem="noK-7j-oZd" firstAttribute="leading" secondItem="DGg-om-h8W" secondAttribute="leadingMargin" id="rKa-iJ-YsG"/>
                             <constraint firstAttribute="centerX" secondItem="ue8-M0-DgF" secondAttribute="centerX" id="xDd-l3-xq4"/>
+                            <constraint firstItem="h94-5q-79R" firstAttribute="leading" secondItem="DGg-om-h8W" secondAttribute="leadingMargin" constant="-16" id="z9l-gO-KMu"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -362,9 +390,14 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="audioBtn" destination="Zqo-AJ-oaf" id="lEV-2U-7eD"/>
                         <outlet property="dateAiredView" destination="sW9-1D-Pv8" id="dKM-ZI-3dy"/>
                         <outlet property="durationView" destination="6rE-Du-Dge" id="z81-xl-Pbn"/>
+                        <outlet property="forwardBtn" destination="IO7-ep-brb" id="Uzh-Li-5tt"/>
+                        <outlet property="pauseBtn" destination="SNG-TN-tXW" id="ARO-p0-Cas"/>
+                        <outlet property="playBtn" destination="VkS-iw-a7z" id="4YW-md-lfM"/>
                         <outlet property="reporterNameView" destination="ha0-Az-FfF" id="XxX-gj-NeH"/>
+                        <outlet property="rewindBtn" destination="Ihe-WD-vcU" id="rIu-l4-mit"/>
                         <outlet property="teaserView" destination="noK-7j-oZd" id="oCe-9d-6Hx"/>
                         <outlet property="titleView" destination="jqU-UT-QHw" id="Tf0-OG-qHr"/>
                     </connections>
@@ -386,7 +419,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vb-b1-tdG">
-                                <rect key="frame" x="0.0" y="15" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Story page" id="4SL-0o-7Ct">
                                         <barButtonItem key="leftBarButtonItem" title="❮ Back to Story" id="nte-lh-LeU">
@@ -398,14 +431,13 @@
                                 </items>
                             </navigationBar>
                             <webView tag="1000" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXz-VX-k4o">
-                                <rect key="frame" x="0.0" y="59" width="600" height="541"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AXz-VX-k4o" firstAttribute="leading" secondItem="IER-fF-SnK" secondAttribute="leadingMargin" constant="-16" id="7l4-qz-6y6"/>
-                            <constraint firstItem="6Vb-b1-tdG" firstAttribute="top" secondItem="IER-fF-SnK" secondAttribute="topMargin" constant="15" id="FG8-Xt-hfY"/>
+                            <constraint firstItem="6Vb-b1-tdG" firstAttribute="top" secondItem="IER-fF-SnK" secondAttribute="topMargin" id="FG8-Xt-hfY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6Vb-b1-tdG" secondAttribute="trailing" constant="-16" id="JVu-Ng-Ujo"/>
                             <constraint firstItem="AXz-VX-k4o" firstAttribute="trailing" secondItem="IER-fF-SnK" secondAttribute="trailingMargin" constant="16" id="OAf-1s-IbM"/>
                             <constraint firstItem="AXz-VX-k4o" firstAttribute="top" secondItem="6Vb-b1-tdG" secondAttribute="bottom" id="TtE-Xs-JZ8"/>
